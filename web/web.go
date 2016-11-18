@@ -18,7 +18,7 @@ func Start(addr string) {
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello, DISCVR!")
 	})
-	e.Get("/version", func(c echo.Context) error {
+	e.GET("/version", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, map[string]string{
 			"version_info": versionInfo,
 			"build_time":   buildTimeInfo,
