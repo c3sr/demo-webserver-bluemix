@@ -15,8 +15,10 @@ pipelines:
           - tar -xvf Bluemix_CLI_${BLUMIX_VERSION}_amd64.tar.gz
           - cd Bluemix_CLI
           - ./install_bluemix_cli
+          ################################################################################
           - export CLOUDFOUNDRY_VERSION=6.22.2
           - wget -O cf.tgz https://cli.run.pivotal.io/stable?release=linux64-binary&version=${CLOUDFOUNDRY_VERSION}&source=github-rel
+          - ls -l
           - tar -xvf cf.tgz
           - rm cf.tgz
           - chmod +x cf
