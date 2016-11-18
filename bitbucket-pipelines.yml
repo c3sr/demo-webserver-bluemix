@@ -16,7 +16,8 @@ pipelines:
           ################################################################################
           # install cloudfoundry cli
           ################################################################################
-          - curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
+          - export CLOUDFOUNDRY_VERSION=6.22.1
+          - curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&version=${CLOUDFOUNDRY_VERSION}&source=github-rel'
           - dpkg -i cf-cli_amd64.deb
           - cf -v
           ################################################################################
