@@ -54,11 +54,12 @@ pipelines:
           - export BUILD_DATE=`date +%Y-%m-%d:%H:%M`
           - echo "package web" > ${VERSIONFILE}
           - echo "const (" >> ${VERSIONFILE}
-          - echo "  versionInfo = \"$(BITBUCKET_COMMIT)\"" >> ${VERSIONFILE}
-          - echo "  repository = \"$(BITBUCKET_REPO_SLUG)\"" >> ${VERSIONFILE}
-          - echo "  buildTimeInfo = \"$(BUILD_DATE)\"" >> ${VERSIONFILE}
+          - echo "  versionInfo = \"${BITBUCKET_COMMIT}\"" >> ${VERSIONFILE}
+          - echo "  repository = \"${BITBUCKET_REPO_SLUG}\"" >> ${VERSIONFILE}
+          - echo "  buildTimeInfo = \"${BUILD_DATE}\"" >> ${VERSIONFILE}
           - echo ")" >> ${VERSIONFILE}
           - gofmt -w ${VERSIONFILE}
+          - cat ${VERSIONFILE}
           ################################################################################
           # setup bluemix
           ################################################################################
