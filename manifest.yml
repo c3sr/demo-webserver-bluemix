@@ -7,6 +7,6 @@ applications:
   name: p3sr-demo-webserver-bluemix
   host: p3sr-demo-webserver-bluemix
   disk_quota: 1024M
-  buildpack: go_buildpack
+  buildpack: https://github.com/cloudfoundry/go-buildpack.git
   env:
     GOVERSION: go1.7
