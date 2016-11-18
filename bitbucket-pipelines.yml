@@ -54,7 +54,7 @@ pipelines:
           - export BLUEMIX_SPACE=dev
           - cf api https://api.ng.bluemix.net
           - cf auth ${BLUEMIX_USER} ${BLUEMIX_PASSWORD}
-          - cf target -o ${BLUEMIX_USER} -s ${BLUEMIX_SPACE}
+          - cf target -o ${BLUEMIX_ORG} -s ${BLUEMIX_SPACE}
           - cf a
           - cf push -b "p3sr-demo-webserver" https://github.com/cloudfoundry/go-buildpack.git
           ################################################################################
