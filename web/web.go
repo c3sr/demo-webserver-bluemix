@@ -18,6 +18,13 @@ func Start(addr string) {
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello, DISCVR!")
 	})
+	e.Get("/version", func(c echo.Context) error {
+		return c.JSON(http.StatusOK, map[string]string{
+			"version_info": versionInfo,
+			"build_time":   buildTimeInfo,
+			"repository":   repository,
+		})
+	})
 	e.GET("/assets/*",
 		echo.WrapHandler(http.FileServer(_escFS(false))))
 	e.Logger.Fatal(e.Start(addr))

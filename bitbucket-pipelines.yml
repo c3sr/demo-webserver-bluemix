@@ -48,6 +48,18 @@ pipelines:
           - export VERSION=$BITBUCKET_COMMIT
           - cd "${PACKAGE_PATH}"
           ################################################################################
+          # overwrite the web/_version.go file
+          ################################################################################
+          - export VERSIONFILE="${PACKAGE_PATH}/web/version_gen.go"
+          - export BUILD_DATE=date +%Y-%m-%d:%H:%M
+          - echo "package web" > ${VERSIONFILE}
+          - echo "const (" >> ${VERSIONFILE}
+          - echo "  versionInfo = \"$(BITBUCKET_COMMIT)\"" >> ${VERSIONFILE}
+          - echo "  repository = \"$(BITBUCKET_REPO_SLUG)\"" >> ${VERSIONFILE}
+          - echo "  buildTimeInfo = \"$(BUILD_DATE)\"" >> ${VERSIONFILE}
+          - echo ")" >> ${VERSIONFILE}
+          - gofmt -w ${VERSIONFILE}
+          ################################################################################
           # setup bluemix
           ################################################################################
           - export BLUEMIX_USER=dakkak@illinois.edu ## These need to be set as
