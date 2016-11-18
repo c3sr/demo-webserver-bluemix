@@ -10,24 +10,42 @@ pipelines:
     - step:
         script: # Modify the commands below to build your repository.
           ################################################################################
+          # install bluemix tools
+          ################################################################################
           - export BLUMIX_VERSION=0.4.4
           - wget http://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli/Bluemix_CLI_${BLUMIX_VERSION}_amd64.tar.gz
           - tar -xvf Bluemix_CLI_${BLUMIX_VERSION}_amd64.tar.gz
           - cd Bluemix_CLI
           - ./install_bluemix_cli
           ################################################################################
+          # install cloudfoundry cli
+          ################################################################################
           - curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
           - dpkg -i cf-cli_amd64.deb
           - cf -v
           ################################################################################
+          # install jq
+          ################################################################################
           - wget -O jq http://stedolan.github.io/jq/download/linux64/jq
-          - chmod +x cf jq
+          - chmod +x jq
+          - mv jq /usr/bin
+          ################################################################################
           # setup glide
+          ################################################################################
           - curl https://glide.sh/get | sh
+          ################################################################################
           - PACKAGE_PATH="${GOPATH}/src/bitbucket.org/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}"
           - mkdir -pv "${PACKAGE_PATH}"
           - tar -cO --exclude-vcs --exclude=bitbucket-pipelines.yml . | tar -xv -C "${PACKAGE_PATH}"
           - cd "${PACKAGE_PATH}"
+          ################################################################################
+          # install dependencies
+          ################################################################################
+          - glide install
+          ################################################################################
+          # start building the project
+          ################################################################################
+          - export VERSION=$BITBUCKET_COMMIT
           ################################################################################
           - cf push p3sr-demo-webserver -b https://github.com/cloudfoundry/go-buildpack.git
           - cf login -a https://api.ng.bluemix.net -u $IBM_EMAIL -p $IBM_PASSWORD
