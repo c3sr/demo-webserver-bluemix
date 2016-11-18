@@ -10,6 +10,11 @@ pipelines:
     - step:
         script: # Modify the commands below to build your repository.
           ################################################################################
+          - PACKAGE_PATH="${GOPATH}/src/bitbucket.org/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}"
+          - mkdir -pv "${PACKAGE_PATH}"
+          - tar -cO --exclude-vcs --exclude=bitbucket-pipelines.yml . | tar -xv -C "${PACKAGE_PATH}"
+          - cd "${PACKAGE_PATH}"
+          ################################################################################
           # install bluemix tools
           ################################################################################
           - export BLUMIX_VERSION=0.4.4
@@ -33,11 +38,6 @@ pipelines:
           # setup glide
           ################################################################################
           - curl https://glide.sh/get | sh
-          ################################################################################
-          - PACKAGE_PATH="${GOPATH}/src/bitbucket.org/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}"
-          - mkdir -pv "${PACKAGE_PATH}"
-          - tar -cO --exclude-vcs --exclude=bitbucket-pipelines.yml . | tar -xv -C "${PACKAGE_PATH}"
-          - cd "${PACKAGE_PATH}"
           ################################################################################
           # install dependencies
           ################################################################################
