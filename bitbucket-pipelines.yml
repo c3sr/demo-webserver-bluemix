@@ -14,7 +14,7 @@ pipelines:
           - wget http://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli/Bluemix_CLI_${BLUMIX_VERSION}_amd64.tar.gz
           - tar -xvf Bluemix_CLI_${BLUMIX_VERSION}_amd64.tar.gz
           - cd Bluemix_CLI
-          = ./install_bluemix_cli
+          - ./install_bluemix_cli
           - export CLOUDFOUNDRY_VERSION=6.22.2
           - wget -O cf.tgz https://cli.run.pivotal.io/stable?release=linux64-binary&version=${CLOUDFOUNDRY_VERSION}&source=github-rel
           - tar -xvf cf.tgz
