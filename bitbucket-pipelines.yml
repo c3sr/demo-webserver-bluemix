@@ -17,8 +17,10 @@ pipelines:
           # install cloudfoundry cli
           ################################################################################
           - export CLOUDFOUNDRY_VERSION=6.22.1
-          - curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&version=${CLOUDFOUNDRY_VERSION}&source=github'
-          - dpkg -i cf-cli_amd64.deb
+          - curl -v -L -o cf-cli.tgz 'https://cli.run.pivotal.io/stable?release=linux64-binary&version=${CLOUDFOUNDRY_VERSION}&source=github-rel'
+          - tar -xf cf-cli.tgz
+          - chmod +x cf
+          - mv cf /usr/bin
           - cf -v
           ################################################################################
           # install jq
