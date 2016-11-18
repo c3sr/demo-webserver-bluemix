@@ -17,7 +17,9 @@ pipelines:
           # install cloudfoundry cli
           ################################################################################
           - export CLOUDFOUNDRY_VERSION=6.22.1
-          - wget -O cf.tgz 'https://cli.run.pivotal.io/stable?release=linux64-binary&version=${CLOUDFOUNDRY_VERSION}&source=github-rel'
+          - export CLOUDFOUNDRY_URL="https://cli.run.pivotal.io/stable?release=linux64-binary&version=${CLOUDFOUNDRY_VERSION}&source=github-rel"
+          - echo "Downloading cli from ${CLOUDFOUNDRY_URL}"
+          - wget -O cf.tgz ${CLOUDFOUNDRY_URL}
           - tar -xvf cf.tgz
           - chmod +x cf
           - mv cf /usr/bin
