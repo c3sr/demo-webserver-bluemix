@@ -53,12 +53,13 @@ pipelines:
           - export BLUEMIX_USER=dakkak@illinois.edu
           - export BLUEMIX_ORG=IBM-ILLINOIS-C3SR
           - export BLUEMIX_SPACE=dev
+          - export BLUEMIX_PROJECT=p3sr-demo-webserver-bluemix
           - cf api https://api.ng.bluemix.net
           - cf auth ${BLUEMIX_USER} ${BLUEMIX_PASSWORD}
           - cf target -o ${BLUEMIX_ORG} -s ${BLUEMIX_SPACE}
           - cf a
-          - cf push "p3sr-demo-webserver" -b https://github.com/cloudfoundry/go-buildpack.git
-          - cf logs p3sr-demo-webserver --recent
+          - cf push "${BLUEMIX_PROJECT}" -b https://github.com/cloudfoundry/go-buildpack.git
+          - cf logs ${BLUEMIX_PROJECT} --recent
           ################################################################################
           # - bluemix api https://api.ng.bluemix.net
           # - bluemix login -u ${BLUEMIX_USER} -o ${BLUEMIX_ORG} -s ${BLUEMIX_SPACE}

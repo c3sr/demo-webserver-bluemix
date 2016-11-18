@@ -4,7 +4,7 @@ applications:
   memory: 128M
   instances: 1
   domain: mybluemix.net
-  name: p3sr-demo-webserver
-  host: demo-webserver
+  name: p3sr-demo-webserver-bluemix
+  host: p3sr-demo-webserver-bluemix
   disk_quota: 1024M
   buildpack: go_buildpack
