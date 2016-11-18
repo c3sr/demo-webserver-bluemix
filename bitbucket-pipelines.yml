@@ -73,16 +73,6 @@ pipelines:
           - cf a
           - cf push "${BLUEMIX_PROJECT}" -b https://github.com/cloudfoundry/go-buildpack.git
           - cf logs ${BLUEMIX_PROJECT} --recent
-          ################################################################################
-          # - bluemix api https://api.ng.bluemix.net
-          # - bluemix login -u ${BLUEMIX_USER} -o ${BLUEMIX_ORG} -s ${BLUEMIX_SPACE}
-          # - cf push "p3sr-demo-webserver"
-          ################################################################################
-          # - cf api https://api.ng.bluemix.net
-          # - cf auth $BLUEMIX_USER $BLUEMIX_PASSWORD
-          # - cf target -o $BLUEMIX_USER -s dev
-          # - cf a
-          # - cf push -b demo-webserver https://github.com/cloudfoundry/go-buildpack.git
 
 # Resources:
 # - https://github.com/wercker/support/issues/70#issuecomment-120198963
