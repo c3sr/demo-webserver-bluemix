@@ -2,3 +2,4 @@ package: bitbucket.org/c3sr/p3sr-demo-webserver-bluemix
 import:
 - package: github.com/labstack/echo
   version: ^3.0.1
+- package: github.com/mjibson/esc

@@ -1,5 +1,5 @@
-hash: 39b1bb9daf2724453c79854dd3d5099273139b3fa7817f0931b83b0370fb57eb
-updated: 2016-11-18T06:37:11.387542778-07:00
+hash: d13880e37db19f28924296cc128aeb62ac9487add309e11eb4e3ce658aea0132
+updated: 2016-11-18T07:43:01.512481922-07:00
 imports:
 - name: github.com/labstack/echo
   version: f9e97332f3bebd2c26753f7dc679588a22cb387d
@@ -14,6 +14,8 @@ imports:
   version: 66b8e73f3f5cda9f96b69efd03dd3d7fc4a5cdb8
 - name: github.com/miekg/dns
   version: 58f52c57ce9df13460ac68200cef30a008b9c468
+- name: github.com/mjibson/esc
+  version: 325f7960f7784b0ce5e2c821ee1e7dca5b435ba1
 - name: github.com/rsc/letsencrypt
   version: 76104d26167d38b6a0010f42bfc8ec5487742e8b
 - name: github.com/tylerb/graceful
