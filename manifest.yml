@@ -8,3 +8,5 @@ applications:
   host: p3sr-demo-webserver-bluemix
   disk_quota: 1024M
   buildpack: go_buildpack
+  env:
+    GOVERSION: go1.7
