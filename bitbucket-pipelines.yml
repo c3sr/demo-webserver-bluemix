@@ -1,3 +1,15 @@
+# This is a sample build configuration for Go.
+# Check our guides at https://confluence.atlassian.com/x/VYk8Lw for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: golang:1.7
+
+pipelines:
+  default:
+    - step:
+        script: # Modify the commands below to build your repository.
+          ################################################################################
           - export BLUMIX_VERSION=0.4.4
           - wget http://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli/Bluemix_CLI_${BLUMIX_VERSION}_amd64.tar.gz
           - tar -xvf Bluemix_CLI_${BLUMIX_VERSION}_amd64.tar.gz
@@ -7,6 +19,10 @@
           - wget -O cf.tgz https://cli.run.pivotal.io/stable?release=linux64-binary&version=${CLOUDFOUNDRY_VERSION}&source=github-rel
           - tar -xvf cf.tgz
           - rm cf.tgz
+          - chmod +x cf
+          - mv cf /usr/bin
+          - cf -v
+          ################################################################################
           - wget -O jq http://stedolan.github.io/jq/download/linux64/jq
           - chmod +x cf jq
           # setup glide
@@ -15,8 +31,11 @@
           - mkdir -pv "${PACKAGE_PATH}"
           - tar -cO --exclude-vcs --exclude=bitbucket-pipelines.yml . | tar -xv -C "${PACKAGE_PATH}"
           - cd "${PACKAGE_PATH}"
+          ################################################################################
           - cf push p3sr-demo-webserver -b https://github.com/cloudfoundry/go-buildpack.git
           - cf login -a https://api.ng.bluemix.net -u $IBM_EMAIL -p $IBM_PASSWORD
+          - cf auth $BLUEMIX_USER $BLUEMIX_PASSWORD
 
 # Resources:
 # - https://github.com/wercker/support/issues/70#issuecomment-120198963
+# - https://circleci.com/docs/deploy-bluemix/
