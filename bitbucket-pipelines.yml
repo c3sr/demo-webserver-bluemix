@@ -63,8 +63,6 @@ pipelines:
           ################################################################################
           # setup bluemix
           ################################################################################
-          - export BLUEMIX_SPACE=dev
-          - export BLUEMIX_PROJECT=p3sr-demo-webserver-bluemix
           - cf api https://api.ng.bluemix.net
           - cf auth ${BLUEMIX_USER} ${BLUEMIX_PASSWORD}
           - cf target -o ${BLUEMIX_ORG} -s ${BLUEMIX_SPACE}
