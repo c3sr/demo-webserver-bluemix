@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 
@@ -12,12 +13,11 @@ const (
 )
 
 func main() {
-
-	var port string
-	if port = os.Getenv("PORT"); len(port) == 0 {
+	port, found := os.LookupEnv("PORT")
+	if !found {
 		port = DEFAULT_PORT
 	}
 
 	log.Printf("Starting app on port %+v\n", port)
-	web.Start(":1323")
+	web.Start(fmt.Sprintf(":%s", port))
 }
