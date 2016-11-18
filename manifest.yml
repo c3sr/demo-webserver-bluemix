@@ -1,0 +1,7 @@
+---
+applications:
+  - name: demo-webserver
+    command: demo-webserver
+    env:
+      GOVERSION: go1.6
+      GOPACKAGENAME: bitbucket.org/c3sr/p3sr-demo-webserver-bluemix
