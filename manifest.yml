@@ -1,7 +1,10 @@
 ---
 applications:
-  - name: demo-webserver
-    command: demo-webserver
-    env:
-      GOVERSION: go1.6
-      GOPACKAGENAME: bitbucket.org/c3sr/p3sr-demo-webserver-bluemix
+- path: .
+  memory: 128M
+  instances: 1
+  domain: mybluemix.net
+  name: p3sr-demo-webserver
+  host: demo-webserver
+  disk_quota: 1024M
+  buildpack: go_buildpack

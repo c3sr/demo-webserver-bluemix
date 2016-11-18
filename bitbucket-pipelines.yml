@@ -30,9 +30,7 @@ pipelines:
           ################################################################################
           # install jq
           ################################################################################
-          - wget -O jq http://stedolan.github.io/jq/download/linux64/jq
-          - chmod +x jq
-          - mv jq /usr/bin
+          - apt-get install jq
           ################################################################################
           # setup glide
           ################################################################################
@@ -47,9 +45,17 @@ pipelines:
           ################################################################################
           - export VERSION=$BITBUCKET_COMMIT
           ################################################################################
-          - cf push p3sr-demo-webserver -b https://github.com/cloudfoundry/go-buildpack.git
-          - cf login -a https://api.ng.bluemix.net -u $IBM_EMAIL -p $IBM_PASSWORD
-          - cf auth $BLUEMIX_USER $BLUEMIX_PASSWORD
+          # setup bluemix
+          ################################################################################
+          - bluemix api https://api.ng.bluemix.net
+          - bluemix login -u dakkak@illinois.edu -o IBM-ILLINOIS-C3SR -s dev
+          - cf push "p3sr-demo-webserver"
+          ################################################################################
+          # - cf api https://api.ng.bluemix.net
+          # - cf auth $BLUEMIX_USER $BLUEMIX_PASSWORD
+          # - cf target -o $BLUEMIX_USER -s dev
+          # - cf a
+          # - cf push -b demo-webserver https://github.com/cloudfoundry/go-buildpack.git
 
 # Resources:
 # - https://github.com/wercker/support/issues/70#issuecomment-120198963
