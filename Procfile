@@ -1,1 +1,1 @@
-web: p3sr-demo-webserver
+web: p3sr-demo-webserver-bluemix
