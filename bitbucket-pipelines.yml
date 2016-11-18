@@ -74,3 +74,4 @@ pipelines:
 # - https://github.com/wercker/support/issues/70#issuecomment-120198963
 # - https://circleci.com/docs/deploy-bluemix/
 # - http://docs.cloudfoundry.org/buildpacks/go/index.html
+# - https://console.ng.bluemix.net/docs/services/ContinuousDelivery/toolchains_working.html
