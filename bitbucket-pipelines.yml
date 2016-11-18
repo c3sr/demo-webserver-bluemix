@@ -51,7 +51,7 @@ pipelines:
           # overwrite the web/_version.go file
           ################################################################################
           - export VERSIONFILE="${PACKAGE_PATH}/web/version_gen.go"
-          - export BUILD_DATE=date +%Y-%m-%d:%H:%M
+          - export BUILD_DATE=`date +%Y-%m-%d:%H:%M`
           - echo "package web" > ${VERSIONFILE}
           - echo "const (" >> ${VERSIONFILE}
           - echo "  versionInfo = \"$(BITBUCKET_COMMIT)\"" >> ${VERSIONFILE}
