@@ -3,7 +3,7 @@
 # Only use spaces to indent your .yml configuration.
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
-image: golang:1.7
+image: c3sr/bluemixdeployment
 
 pipelines:
   default:
@@ -13,35 +13,6 @@ pipelines:
           - PACKAGE_PATH="${GOPATH}/src/bitbucket.org/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}"
           - mkdir -pv "${PACKAGE_PATH}"
           - tar -cO --exclude-vcs --exclude=bitbucket-pipelines.yml . | tar -xv -C "${PACKAGE_PATH}"
-          ################################################################################
-          # install cloudfoundry cli
-          ################################################################################
-          - export CLOUDFOUNDRY_VERSION=6.22.1
-          - export CLOUDFOUNDRY_URL="https://cli.run.pivotal.io/stable?release=debian64&version=${CLOUDFOUNDRY_VERSION}&source=github-rel"
-          - echo "Downloading cli from ${CLOUDFOUNDRY_URL}"
-          - wget -O cf-cli_amd64.deb ${CLOUDFOUNDRY_URL}
-          - dpkg -i cf-cli_amd64.deb
-          - cf -v
-          - rm cf-cli_amd64.deb
-          ################################################################################
-          # install jq
-          ################################################################################
-          - wget -O jq http://stedolan.github.io/jq/download/linux64/jq
-          - chmod +x jq
-          - mv jq /usr/bin
-          ################################################################################
-          # install bluemix tools
-          ################################################################################
-          - export BLUMIX_VERSION=0.4.4
-          - wget http://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli/Bluemix_CLI_${BLUMIX_VERSION}_amd64.tar.gz
-          - tar -xvf Bluemix_CLI_${BLUMIX_VERSION}_amd64.tar.gz
-          - cd Bluemix_CLI
-          - ./install_bluemix_cli
-          ################################################################################
-          # setup glide and godep
-          ################################################################################
-          - curl https://glide.sh/get | sh
-          - go get github.com/tools/godep
           ################################################################################
           # start building the project
           ################################################################################
