@@ -23,6 +23,7 @@ pipelines:
           - cat ${PACKAGE_PATH}/web/version_gen.go
           # generate manifest file
           - bmd gen manifest --package ${PACKAGE_NAME} --host ${PACKAGE_NAME} --memory 128M --disk 1024M --output "${PACKAGE_PATH}"
+          - cat ${PACKAGE_PATH}/manifest.yml
           ################################################################################
           # deploy to bluemix
           ################################################################################
