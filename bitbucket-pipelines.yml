@@ -10,36 +10,22 @@ pipelines:
     - step:
         script: # Modify the commands below to build your repository.
           ################################################################################
+          - PACKAGE_NAME=${BITBUCKET_REPO_SLUG}
           - PACKAGE_PATH="${GOPATH}/src/bitbucket.org/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}"
           - mkdir -pv "${PACKAGE_PATH}"
           - tar -cO --exclude-vcs --exclude=bitbucket-pipelines.yml . | tar -xv -C "${PACKAGE_PATH}"
+          - cd "${PACKAGE_PATH}"
           ################################################################################
           # start building the project
           ################################################################################
-          - export VERSION=$BITBUCKET_COMMIT
-          - cd "${PACKAGE_PATH}"
+          # generate version file
+          - bmd gen version -package ${PACKAGE_NAME} -output "${PACKAGE_PATH}/web/version_gen.go"
+          # generate manifest file
+          - bmd gen manifest -package ${PACKAGE_NAME} -host ${PACKAGE_NAME} -memory 128M -diskquota 1024M -output "${PACKAGE_PATH}/manifest.yml"
           ################################################################################
-          # overwrite the web/_version.go file
+          # deploy to bluemix
           ################################################################################
-          - export VERSIONFILE="${PACKAGE_PATH}/web/version_gen.go"
-          - export BUILD_DATE=`date +%Y-%m-%d:%H:%M`
-          - echo "package web" > ${VERSIONFILE}
-          - echo "const (" >> ${VERSIONFILE}
-          - echo "  versionInfo = \"${BITBUCKET_COMMIT}\"" >> ${VERSIONFILE}
-          - echo "  repository = \"${BITBUCKET_REPO_SLUG}\"" >> ${VERSIONFILE}
-          - echo "  buildTimeInfo = \"${BUILD_DATE}\"" >> ${VERSIONFILE}
-          - echo ")" >> ${VERSIONFILE}
-          - gofmt -w ${VERSIONFILE}
-          - cat ${VERSIONFILE}
-          ################################################################################
-          # setup bluemix
-          ################################################################################
-          - cf api https://api.ng.bluemix.net
-          - cf auth ${BLUEMIX_USER} ${BLUEMIX_PASSWORD}
-          - cf target -o ${BLUEMIX_ORG} -s ${BLUEMIX_SPACE}
-          - cf a
-          - cf push "${BLUEMIX_PROJECT}" -b https://github.com/cloudfoundry/go-buildpack.git
-          - cf logs ${BLUEMIX_PROJECT} --recent
+          - bmd deploy
 
 # Resources:
 # - https://github.com/wercker/support/issues/70#issuecomment-120198963
