@@ -19,7 +19,7 @@ pipelines:
           # start building the project
           ################################################################################
           # generate version file
-          - bmd gen version --package ${PACKAGE_NAME} --output "${PACKAGE_PATH}/web"
+          - bmd gen version --package web --output "${PACKAGE_PATH}/web"
           - cat ${PACKAGE_PATH}/web/version_gen.go
           # generate manifest file
           - bmd gen manifest --package ${PACKAGE_NAME} --host ${PACKAGE_NAME} --memory 128M --disk 1024M --output "${PACKAGE_PATH}"
