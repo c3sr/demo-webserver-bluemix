@@ -20,9 +20,9 @@ func Start(addr string) {
 	})
 	e.GET("/version", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, map[string]string{
-			"version_info": versionInfo,
-			"build_time":   buildTimeInfo,
-			"repository":   repository,
+			"version_info": VersionInfo,
+			"build_time":   BuildTimeInfo,
+			"repository":   Repository,
 		})
 	})
 	e.GET("/assets/*",
