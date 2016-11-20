@@ -26,7 +26,13 @@ pipelines:
           ################################################################################
           # deploy to bluemix
           ################################################################################
-          - bmd deploy
+          # - bmd deploy # not currently working, but once finished it would replace the rest of this file
+          - cf api https://api.ng.bluemix.net
+          - cf auth ${BLUEMIX_USER} ${BLUEMIX_PASSWORD}
+          - cf target -o ${BLUEMIX_ORG} -s ${BLUEMIX_SPACE}
+          - cf a
+          - cf push "${BLUEMIX_PROJECT}" -b https://github.com/cloudfoundry/go-buildpack.git
+          - cf logs ${BLUEMIX_PROJECT} --recent
 
 # Resources:
 # - https://github.com/wercker/support/issues/70#issuecomment-120198963
