@@ -16,7 +16,7 @@ func Start(addr string) {
 	e.ShutdownTimeout = 30 * time.Second
 
 	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, DISCVR!")
+		return c.String(http.StatusOK, "Hello, DISCVR!.....")
 	})
 	e.GET("/version", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, map[string]string{
