@@ -7,18 +7,18 @@ env:
   - REPO="c3sr/demo-webserver-bluemix"
 before_install:
 - go get -v github.com/Masterminds/glide
-# - cd $GOPATH/src/github.com/Masterminds/glide && git checkout 84607742b10f492430762d038e954236bbaf23f7
-  && go install && cd -
+- cd $GOPATH/src/github.com/Masterminds/glide && git checkout 84607742b10f492430762d038e954236bbaf23f7
+ go install && cd -
 - glide install
 script:
 - go build && ./demo-webserver-bluemix
-deploy:
-  provider: cloudfoundry
-  api: https://api.ng.bluemix.net
-  username: cli99
-  password:
-    secure: I9LG33zqGdkDqkUHFFFoPDj//zB5FfsyK/LP4y0NQVmSvXHmv/FhWUXhlLhRKBBAq1blk3LYcnYsTZwfUl4FylduftWYFHPg4Ax5ybELF4OyvJR5f623XTCIg8//xux6NPRsP4BR43qTzQB5QNVdz+wUhPjTsdCmA8/DTqyf7FRBA6xfu3LAFQnog7devlO2W4zXP6YIfUV9HFxy6vfMoRAwLcWatVYqTAO8hNa/aVCDkMxElM2tE7WjV96WHQ2cnRYMmgxpHG8E1UFxndbjvDLCFCYSuJYtSvms0lFmXZw834Ox4/5JPYS400/kVxGkfSDaKkysavyEAmJZJMstuEikkeDesjyLIHIG7VGe5VrGMJBRdPKWbEM6qhuO65+nxvKXAmHFIjP+anh7pYQdqt0pB5fLXVNJ0byVRbHR7Wk8yCLRrNiFDhCCMu2KIxuzuh8HrFzFIMwScpRVPCWEQReZ2gfmqgJBo2ja03fUSup0tjmH0TGCOuIg51YrInDtSdanXGex7iqjtFmSlnsqsjlJjlYLqA7UGaIJ53mP4mXJI+MHzgx9JaBaF9DCS04LzsMZW/WXZ++gg2YT/RinY+LvrnJdvSpvzCvr6Frc0SMk3Q7HG8mxBHbXoEOhbeLEsqRfjp3eiuaOJotQImdQSzRZ8suPSumRdC3M8wdQwQU=
-  organization: c3sr
-  space: dev
-  on:
-    repo: c3sr/demo-webserver-bluemix
+# deploy:
+#   provider: cloudfoundry
+#   api: https://api.ng.bluemix.net
+#   username: cli99
+#   password:
+#     secure: I9LG33zqGdkDqkUHFFFoPDj//zB5FfsyK/LP4y0NQVmSvXHmv/FhWUXhlLhRKBBAq1blk3LYcnYsTZwfUl4FylduftWYFHPg4Ax5ybELF4OyvJR5f623XTCIg8//xux6NPRsP4BR43qTzQB5QNVdz+wUhPjTsdCmA8/DTqyf7FRBA6xfu3LAFQnog7devlO2W4zXP6YIfUV9HFxy6vfMoRAwLcWatVYqTAO8hNa/aVCDkMxElM2tE7WjV96WHQ2cnRYMmgxpHG8E1UFxndbjvDLCFCYSuJYtSvms0lFmXZw834Ox4/5JPYS400/kVxGkfSDaKkysavyEAmJZJMstuEikkeDesjyLIHIG7VGe5VrGMJBRdPKWbEM6qhuO65+nxvKXAmHFIjP+anh7pYQdqt0pB5fLXVNJ0byVRbHR7Wk8yCLRrNiFDhCCMu2KIxuzuh8HrFzFIMwScpRVPCWEQReZ2gfmqgJBo2ja03fUSup0tjmH0TGCOuIg51YrInDtSdanXGex7iqjtFmSlnsqsjlJjlYLqA7UGaIJ53mP4mXJI+MHzgx9JaBaF9DCS04LzsMZW/WXZ++gg2YT/RinY+LvrnJdvSpvzCvr6Frc0SMk3Q7HG8mxBHbXoEOhbeLEsqRfjp3eiuaOJotQImdQSzRZ8suPSumRdC3M8wdQwQU=
+#   organization: c3sr
+#   space: dev
+#   on:
+#     repo: c3sr/demo-webserver-bluemix
