@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"bitbucket.org/c3sr/p3sr-demo-webserver-bluemix/web"
+	"github.com/c3sr/demo-webserver-bluemix/web"
 )
 
 const (
