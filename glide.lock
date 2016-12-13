@@ -1,8 +1,8 @@
-hash: d13880e37db19f28924296cc128aeb62ac9487add309e11eb4e3ce658aea0132
-updated: 2016-11-18T07:43:01.512481922-07:00
+hash: 624fd1721cdd21873a3e1a8cc0f00f5c502471b61f8cf06f5bbcc6425c45fe3c
+updated: 2016-12-13T16:19:34.508679498-06:00
 imports:
 - name: github.com/labstack/echo
-  version: f9e97332f3bebd2c26753f7dc679588a22cb387d
+  version: 8d504c1b699c757b267255c53b3e5219f9974abc
 - name: github.com/labstack/gommon
   version: 9a43ff0d261e0e65594422e9eee08cf301aabbe7
   subpackages:
@@ -12,40 +12,24 @@ imports:
   version: d228849504861217f796da67fae4f6e347643f15
 - name: github.com/mattn/go-isatty
   version: 66b8e73f3f5cda9f96b69efd03dd3d7fc4a5cdb8
-- name: github.com/miekg/dns
-  version: 58f52c57ce9df13460ac68200cef30a008b9c468
 - name: github.com/mjibson/esc
   version: 325f7960f7784b0ce5e2c821ee1e7dca5b435ba1
-- name: github.com/rsc/letsencrypt
-  version: 76104d26167d38b6a0010f42bfc8ec5487742e8b
 - name: github.com/tylerb/graceful
   version: 4df1190835320af7076dfcf27b3d071fd3612caf
 - name: github.com/valyala/fasttemplate
   version: 3b874956e03f1636d171bda64b130f9135f42cff
-- name: github.com/xenolf/lego
-  version: 0792ce9a9f543f72aa1ba4d67a693d5288ab7395
-  subpackages:
-  - acme
 - name: golang.org/x/crypto
   version: 9477e0b78b9ac3d0b03822fd95422e2fe07627cd
   subpackages:
-  - ocsp
+  - acme
+  - acme/autocert
 - name: golang.org/x/net
   version: 8566e9372a500d1344adb9fdfd943c4354ef4aa2
   subpackages:
   - context
-  - publicsuffix
+  - context/ctxhttp
 - name: golang.org/x/sys
   version: b699b7032584f0953262cb2788a0ca19bb494703
   subpackages:
   - unix
-- name: golang.org/x/time
-  version: f51c12702a4d776e4c1fa9b0fabab841babae631
-  subpackages:
-  - rate
-- name: gopkg.in/square/go-jose.v1
-  version: aa2e30fdd1fe9dd3394119af66451ae790d50e0d
-  subpackages:
-  - cipher
-  - json
 testImports: []
