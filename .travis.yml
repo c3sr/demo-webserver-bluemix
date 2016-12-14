@@ -6,7 +6,7 @@ env:
   global:
   - REPO="c3sr/demo-webserver-bluemix"
 before_install:
-- curl https://glide.sh/get | sh
+- wget -O - https://glide.sh/get | sh
 - glide install
 script:
 - cd ${GOPATH}/src/github.com/c3sr/demo-webserver-bluemix
