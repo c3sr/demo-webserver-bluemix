@@ -10,7 +10,7 @@ before_install:
 - cd $GOPATH/src/github.com/Masterminds/glide && git checkout 84607742b10f492430762d038e954236bbaf23f7 && go install && cd -
 - glide install
 script:
-- cd ${GOPATH}/src/github.com/c3sr/
+- cd ${GOPATH}/src/github.com/c3sr/demo-webserver-bluemix
 deploy:
   edge: true
   provider: cloudfoundry
