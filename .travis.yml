@@ -1,15 +1,16 @@
 language: go
 go:
-- '1.7'
+  - '1.7'
 sudo: false
 env:
   global:
   - REPO="c3sr/demo-webserver-bluemix"
 before_install:
-- wget -O - https://glide.sh/get | sh
-- glide install
+  - go get -v github.com/Masterminds/glide
+  - cd $GOPATH/src/github.com/Masterminds/glide && git checkout e73500c735917e39a8b782e0632418ab70250341 && go install && cd -
+  - glide install
 script:
-- cd ${GOPATH}/src/github.com/c3sr/demo-webserver-bluemix
+  - cd ${GOPATH}/src/github.com/c3sr/demo-webserver-bluemix
 deploy:
   provider: cloudfoundry
   api: https://api.ng.bluemix.net
