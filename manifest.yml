@@ -5,5 +5,6 @@ applications:
   name: demo-webserver-bluemix
   host: c3sr
   disk_quota: 1024M
-  command: demo-webserver-bluemix
+  command: demo-webserver-bluemixa
   buildpack: https://github.com/cloudfoundry/go-buildpack.git
+  
