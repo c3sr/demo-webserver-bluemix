@@ -188,26 +188,10 @@ func _escFSMustString(useLocal bool, name string) string {
 
 var _escData = map[string]*_escFile{
 
-	"/assets/.DS_Store": {
-		local:   "assets/.DS_Store",
-		size:    6148,
-		modtime: 1479478219,
-		compressed: `
-H4sIAAAJbogA/+yYT4vTQBTA32RrnURYRlRY8JKr0EPrn/ZaawUvQiHLLuJKTTahHUgzoZlukBLp2Y/h
-/w/hTfQTePGjeJN2XiXG2ouIdXk/CL9pXue1faXTNwMArDcLWwACADgYWzZshOP1Cxa6vsy3yhFBFuRZ
-GsQq2JyL2DHqq0vCBHwYVb6/b0Eay0w3m1+ZtVe7UL/IbcdxnH1HXN5/4o1V7mlfz7KeP328eiTDKMDx
-wNfj9fhQqfjH2A+OZJQPxdV7KtG+TKJpaerJsUxClffULAmzE7x5LEM9Hoprg2l0JqN84CfRkcxkIGOp
-n9m2bXN7KA7m83ar3XA7N1tFw513Os2Ge/tWuyjEc86v37hz9+GjtHjx8tXrN2/fvf/4yXx2xrAIVypF
-+VwtSjxqeadqkv5UuFJ8ovr9cKZPAb4cfniwKR5ujafj7fnPvGkSq2RkfmgEQRB/Ci4l/NK/fiMEQewc
-y/XBRXfRC2OGcQtdK80RaBfdRS+MGT7PQtfQHC3QLrqLXhjjosVw88HwlRnuUJhAu+ju36kNQfzv7BmJ
-5f///d/v/wmCOMewWt/r97acLVjYCDxdT6g0AlBqAixzWHhQuk+NAEHsGN8DAAD//2BvvMoEGAAA
-`,
-	},
-
 	"/assets/images/C3SR_bw.jpg": {
 		local:   "assets/images/C3SR_bw.jpg",
 		size:    1857057,
-		modtime: 1473872931,
+		modtime: 1481660608,
 		compressed: `
 H4sIAAAJbogA/+z8edjsWFUvjtd7zum5mx5pZjicBhoIpzNVUsmhu+mkUqlKJZVKUpWpRCFjVSpzKpWh
 xAkRFbiiiMikCHJRwAtevQzihIjiwAVBARX1NnIRUNT2KqKi9O953zqn+3Sf01zg8fd87x/s56mqnZ21
@@ -15410,7 +15394,7 @@ hCFWHAA=
 	"/assets/images/C3SR_color.jpg": {
 		local:   "assets/images/C3SR_color.jpg",
 		size:    2732082,
-		modtime: 1473872932,
+		modtime: 1481660608,
 		compressed: `
 H4sIAAAJbogA/+z8edAsWXoXBte9t/fumemZbo1mNCO4XwvEkurOPSvzqqdRbpVLVWblWlmZwQdf7vtS
 WZmVmQXBZ4yssIEA7AgrWMLYBoVtCCxsHBYBXoAA2SYgkBEWNngJyYQCOwBbYUKYJQI53rduT2+3RzMy
@@ -43271,7 +43255,7 @@ hBc6CIJ0ajzHiQQNHYxPkGl4G8OhWxImjllVUEnm/dknh9ofFc6jHUyTMNMSJdp4SaRo2ZT3S9A9sX7D
 	"/assets/images/dscvr_favicon.ico": {
 		local:   "assets/images/dscvr_favicon.ico",
 		size:    17962,
-		modtime: 1473703942,
+		modtime: 1481660608,
 		compressed: `
 H4sIAAAJbogA/wAmQNm/iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAABGdBTUEAALGP
 C/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpR
@@ -43579,7 +43563,7 @@ ssjuDQMDgxCSVGiQJ0NaZk6qlb7+wfLu8yBfeLr6uaxzSmgCBAAA///uHA4QKkYAAA==
 	"/assets/images/dscvr_icon.png": {
 		local:   "assets/images/dscvr_icon.png",
 		size:    8813,
-		modtime: 1473703889,
+		modtime: 1481660608,
 		compressed: `
 H4sIAAAJbogA/wBtIpLdiVBORw0KGgoAAAANSUhEUgAAAMkAAADICAYAAABCmsWgAAAgAElEQVR4Xu2d
 e3AV13nAv3Pv1ft1dfUAvZAEknmDAMfg2DMWTZ2xMTW4bWbambiWO5N0OnFqiEgmNWqiTISdUBNw80ft
@@ -43735,7 +43719,7 @@ SUVORK5CYIIBAAD//xuOX1FtIgAA
 	"/assets/images/dscvr_icon_large.png": {
 		local:   "assets/images/dscvr_icon_large.png",
 		size:    73048,
-		modtime: 1473709374,
+		modtime: 1481660608,
 		compressed: `
 H4sIAAAJbogA/0y7Z1TTTxctnPwISigaAkrHAEEIRVroLfQaUEITadKLIiC9SOi9aagiRCFIB0EEaUZp
 Spei0puIoHSRru+K/+fe966VD/CBk5k9++yzz8wh8bqRDgMtOy0IBGLQ09U0AYGoSCAQVQnNORAIZBv+
@@ -44926,7 +44910,7 @@ MyEAUgT8W6thNkc42bW7CgAAwMbqtGWVuWfc/wUAAP//0r9ZWVgdAQA=
 	"/assets/images/dscvr_logo.png": {
 		local:   "assets/images/dscvr_logo.png",
 		size:    30573,
-		modtime: 1473703760,
+		modtime: 1481660608,
 		compressed: `
 H4sIAAAJbogA/2T6hVuc3e49DmPFfQoM7lBci2txp7jL4O4ORQsM7u7u7k6BQYtrcXctUJz36vM55/s+
 5/r9AfveK7lXkpXsgJUVpdCQCZChoKDQZKTFVaCgYCBQUFAjiPBQUFCnr7RnUFBkUDLiomqeBmf6SJ5q
@@ -45435,7 +45419,7 @@ NJnqwt+gosC7kGdfHw4ODk5WUlGiQtww6P8LAAD//x4v3HttdwAA
 	"/assets/images/dscvr_logo.svg": {
 		local:   "assets/images/dscvr_logo.svg",
 		size:    1550,
-		modtime: 1473703849,
+		modtime: 1481660608,
 		compressed: `
 H4sIAAAJbogA/2xT224bRw++36f4/v1vGqD0Dsk5FpaDxg6CAnUbOG6KXAqrjSx0LRnahWT06QuOfGiK
 GPByNENy+B3m/O3j/YjDsJ82u+2i5TPXYpqX29Vy3G2HRbvdtW8vmvP/Xf1+efvl43tMhzU+/vHu118u
@@ -45458,7 +45442,7 @@ YX3R/BMAAP//88D3ow4GAAA=
 	"/assets/images/favicon.ico": {
 		local:   "assets/images/favicon.ico",
 		size:    2570,
-		modtime: 1473460288,
+		modtime: 1481660608,
 		compressed: `
 H4sIAAAJbogA/+yUR4taURTHzyxnkVUg61mFfJT5WNn5HXThQlRU7F0EEbE3RCT2XsBeYi8nnDM8mSRv
 JvgyIZv5w+XNXN95v/895QLcwR08fKTnA3y/B/gEAF8A4AEAPsPTPunrPcC3D09LEL7rJl0uF17/Q/V6
@@ -45476,7 +45460,7 @@ Zl12CgoAAA==
 	"/assets/images/logo.svg": {
 		local:   "assets/images/logo.svg",
 		size:    3862,
-		modtime: 1473470889,
+		modtime: 1481660608,
 		compressed: `
 H4sIAAAJbogA/8RW3Y/juA1/37+C8L7soRJDfUu5JAe0xaEFbtCi122BvrmOJ+Oe4wxsz8feX19QiidJ
 d7v9eLkBxhEpkuLHj5Q2370ee3hux6k7DdtKIVXQDs1p3w2HbfXxz9/LWME018O+7k9Du62GU/Xd7t1m

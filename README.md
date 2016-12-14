@@ -1,2 +1,2 @@
 # Bluemix deployment demo #
-Continuously deployed to [here](https://p3sr-demo-webserver-bluemix.mybluemix.net/). You can view the version information at [Version info](https://p3sr-demo-webserver-bluemix.mybluemix.net/version)
+Continuously deployed to [here](https://demo-webserver-bluemix.mybluemix.net/). You can view the version information at [Version info](https://demo-webserver-bluemix.mybluemix.net/version)
