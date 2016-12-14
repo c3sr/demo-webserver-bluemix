@@ -10,9 +10,9 @@ before_install:
 - cd $GOPATH/src/github.com/Masterminds/glide && git checkout 84607742b10f492430762d038e954236bbaf23f7 && go install && cd -
 - glide install
 script:
-# - cd ${GOPATH}/src/github.com/c3sr/demo-webserver-bluemix
+- cd ${GOPATH}/src/github.com/c3sr/demo-webserver-bluemix
 deploy:
-  edge: true
+  # edge: true
   provider: cloudfoundry
   api: https://api.ng.bluemix.net
   username: cli99@illinois.edu
